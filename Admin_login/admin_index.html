@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <title>Admin Pannel</title>
+    <link rel="stylesheet" href="admin_style.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+   
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="text-gray-600 body-font">
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+      >
+        <a
+          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
+        <img src="../assets/img/logo.png" alt="logo" style="height: 3em;">
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+            ></path>
+          </svg>
+          <span class="ml-3 text-xl">M-Care</span>
+        </a>
+        <nav
+          class="md:ml-auto flex flex-wrap items-center text-base justify-center"
+        >
+          <a class="mr-5 hover:text-gray-900"></a>
+          <a class="mr-5 hover:text-gray-900"></a>
+          <a class="mr-5 hover:text-gray-900"></a>
+          <a class="mr-5 hover:text-gray-900"></a>
+        </nav>
+        <button
+          class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+        >
+          <a href="../index.html ">Logout</a>
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-4 h-4 ml-1"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    
+
+    <div class="wrapper">
+      <table id="crud">
+        <caption>
+          Bins
+        </caption>
+        <thead>
+          <tr>
+            <td>Bin Number</td>
+            <td>Location</td>
+            <td>Address</td>
+            <td>Maintenance Date</td>
+            <td>Status</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Old building 2nd floor</td>
+            <td>
+              W, P. G. Kher Marg, 32nd Road, Marg, Off Linking Rd, TPS III,
+              Bandra West, Mumbai, Maharashtra 400050
+            </td>
+            <td>-</td>
+            <td id="bin1Status">empty</td>
+            <td>
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="add-user">Add Bin</button>
+    </div>
+
+    <div class="popup add">
+      <form id="addUserForm" action="">
+        <input
+          type="number"
+          placeholder="Binnumber"
+          name="Binnumber"
+          required
+        />
+        <input type="text" placeholder="Location" name="location" required />
+        <input type="text" placeholder="Address" name="address" required />
+        <input
+          type="date"
+          placeholder="Maintenance Date"
+          name="maintenanceDate"
+        />
+        <div class="form-buttons">
+          <input type="submit" value="Submit" id="addUserSubmit" />
+          <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="popup update">
+      <form id="updateUserForm" action="">
+        <input
+          type="number"
+          placeholder="Bin number"
+          name="Binnumber"
+          required
+        />
+        <input type="text" placeholder="Location" name="location" required />
+        <input type="text" placeholder="Address" name="address" required />
+        <input
+          type="date"
+          placeholder="Maintenance Date"
+          name="maintenanceDate"
+        />
+        <div class="form-buttons">
+          <input type="submit" value="Submit" id="updateUserSubmit" />
+          <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="main2.js"></script>
+  </body>
+</html>
