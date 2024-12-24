@@ -78,3 +78,4 @@ We welcome support from:
 ## Acknowledgments
 We thank our dedicated team, collaborators, and supporters for making M-Care a reality. Together, we can revolutionize menstrual hygiene and create a sustainable future.
 
+Reseach Paper Link - https://ieeexplore.ieee.org/document/10520512
